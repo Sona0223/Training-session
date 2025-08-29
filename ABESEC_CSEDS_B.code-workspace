@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "ABESEC_CSEDS_B",
+			"path": "."
+		},
+		{
+			"name": "FSD_5th_CSEDS",
+			"path": "../FSD_5th_CSEDS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ABESEC_CSEDS_B"
+	}
+}
