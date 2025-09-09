@@ -15,3 +15,11 @@ h2 {
 h3 {
     color: darkred;
 }
+p{
+    color: rebeccapurple;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20px;
+    text-align: justify;
+    border: 4px solid #333333;
+}
