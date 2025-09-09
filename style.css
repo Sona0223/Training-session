@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f2ff;
+    margin: 20px;
+}
+h1, h2 {
+    text-align: center;
+}
+h1 {
+    color: darkblue;
+}
+h2 {
+    color: green;
+}
+h3 {
+    color: darkred;
+}
