@@ -23,3 +23,10 @@ p{
     text-align: justify;
     border: 4px solid #333333;
 }
+
+img {
+    display: block;
+    margin: 20px auto;
+    border: 10px solid red;
+    border-radius: 10px;
+}
