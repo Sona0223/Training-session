@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" id="name" name="name" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label>Choose an option:</label></td>
+                <td>
+                    <input type="radio" id="option1" name="options" value="option1" required>
+                    <label for="option1">Option 1</label>
+                    <input type="radio" id="option2" name="options" value="option2">
+                    <label for="option2">Option 2</label>
+                    <input type="radio" id="option3" name="options" value="option3">
+                    <label for="option3">Option 3</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="comments">Comments:</label></td>
+                <td><textarea id="comments" name="comments" rows="4" cols="40"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="city">Select your city:</label></td>
+                <td>
+                    <select id="city" name="city" required>
+                        <option value="">--Please choose an option--</option>
+                        <option value="city1">City 1</option>
+                        <option value="city2">City 2</option>
+                        <option value="city3">City 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

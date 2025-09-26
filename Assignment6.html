@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #27b7b7 0%, #16e67e 100%);
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+            padding: 32px 24px;
+            width: 280px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 12px 32px rgba(39,183,183,0.18);
+        }
+        .card h2 {
+            color: #27b7b7;
+            margin-bottom: 8px;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+        }
+        .card h4 {
+            color: #16e67e;
+            margin-bottom: 16px;
+            font-size: 1.1em;
+        }
+        .student-list {
+            display: none;
+            margin-top: 12px;
+            padding-left: 0;
+        }
+        .student-list li {
+            list-style: none;
+            background: #f7f7f7;
+            margin-bottom: 8px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: #333;
+            font-size: 1em;
+            box-shadow: 0 2px 6px rgba(39,183,183,0.06);
+        }
+        .show {
+            display: block;
+        }
+        .card .toggle-btn {
+            background: #27b7b7;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 18px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 8px;
+        }
+        .card .toggle-btn:hover {
+            background: #16e67e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="it-card">
+            <h2>Student Details</h2>
+            <h4>IT</h4>
+            <button class="toggle-btn" onclick="toggleList('b1s')">Show Students</button>
+            <ul class="student-list" id="b1s"></ul>
+        </div>
+        <div class="card" id="cs-card">
+            <h2>Student Details</h2>
+            <h4>CS</h4>
+            <button class="toggle-btn" onclick="toggleList('b2s')">Show Students</button>
+            <ul class="student-list" id="b2s"></ul>
+        </div>
+    </div>
+    <script>
+        const student = [
+            { Name: "Jony", class: "Btech", Branch: "IT", Roll: 34 },
+            { Name: "John", class: "Btech", Branch: "IT", Roll: 35 },
+            { Name: "Narth", class: "Btech", Branch: "IT", Roll: 36 },
+            { Name: "Jolly", class: "Btech", Branch: "CS", Roll: 37 },
+            { Name: "Jack", class: "Btech", Branch: "CS", Roll: 38 }
+        ];
+
+        function renderStudents(branch, elementId) {
+            const list = document.getElementById(elementId);
+            list.innerHTML = '';
+            student.filter(s => s.Branch === branch).forEach(s => {
+                const li = document.createElement('li');
+                li.textContent = `${s.Name} (Roll: ${s.Roll}, Class: ${s.class})`;
+                list.appendChild(li);
+            });
+        }
+
+        renderStudents('IT', 'b1s');
+        renderStudents('CS', 'b2s');
+
+        function toggleList(id) {
+            const list = document.getElementById(id);
+            const btn = list.previousElementSibling;
+            if (list.classList.contains('show')) {
+                list.classList.remove('show');
+                btn.textContent = 'Show Students';
+            } else {
+                list.classList.add('show');
+                btn.textContent = 'Hide Students';
+            }
+        }
+    </script>
+</body>
+</html>
