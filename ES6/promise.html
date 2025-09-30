@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        const myPromise = new Promise((resolve, reject) => {
+            const passward = "hii";
+            if(passward.length > 8) {
+                resolve("Password is strong");
+            } else {
+                reject("Password is weak");
+            }
+        });
+        mypromise.then((msg) => {
+            console.log(msg);
+        })
+        mypromise.catch((msg) => {
+            console.log(err);
+        });    
+    </script>
+</body>
+</html>  
