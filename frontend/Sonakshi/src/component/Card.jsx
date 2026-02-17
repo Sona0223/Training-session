@@ -7,7 +7,7 @@ const Card =() => {
         <h1>ABES EC</h1>
         <h1>B.Tech</h1>
     </div>
-  )
+  ) 
 }
 
-export default Card
+export default Card 
