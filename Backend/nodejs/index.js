@@ -64,11 +64,26 @@ const fs=require('fs');
 
 
 
-fs.appendFile("./a1.txt", " Welcome to A1 batch!", (err)=>{
-    if(err){
-        console.log(err);
-    }
-    else{
-        console.log("File appended successfully!");
-    }
-}); 
+// fs.appendFile("./a1.txt", " Welcome to A1 batch!", (err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log("File appended successfully!");
+//     }
+// }); 
+
+
+
+
+const os=require('os');
+
+console.log("system platform", os.platform());
+console.log("user info", os.userinfo());
+console.log("system uptime", os.uptime());
+console.log("system architecture", os.arch());
+console.log("system cpu info", os.cpus());
+console.log("system free memory", os.freemem());
+console.log("system total memory", os.totalmem());
+console.log("system home directory", os.homedir());
+console.log("system hostname", os.hostname());
