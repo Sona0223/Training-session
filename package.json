@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Sona0223/Training-session/issues"
   },
-  "homepage": "https://github.com/Sona0223/Training-session#readme"
+  "homepage": "https://github.com/Sona0223/Training-session#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }

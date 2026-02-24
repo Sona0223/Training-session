@@ -76,14 +76,26 @@ const fs=require('fs');
 
 
 
-const os=require('os');
+// const os=require('os');
 
-console.log("system platform", os.platform());
-console.log("user info", os.userinfo());
-console.log("system uptime", os.uptime());
-console.log("system architecture", os.arch());
-console.log("system cpu info", os.cpus());
-console.log("system free memory", os.freemem());
-console.log("system total memory", os.totalmem());
-console.log("system home directory", os.homedir());
-console.log("system hostname", os.hostname());
+// console.log("system platform", os.platform());
+// console.log("user info", os.userinfo());
+// console.log("system uptime", os.uptime());
+// console.log("system architecture", os.arch());
+// console.log("system cpu info", os.cpus());
+// console.log("system free memory", os.freemem());
+// console.log("system total memory", os.totalmem());
+// console.log("system home directory", os.homedir());
+// console.log("system hostname", os.hostname());
+
+
+
+
+const http=require('http');
+const fs=require('fs');
+const home= fs.readFileSync('./a.html');
+const myserver=http.createServer((req,res)=> {
+    res.end(home)
+})
+
+myserver.listen(8000,()=> console.log("server is run"));
