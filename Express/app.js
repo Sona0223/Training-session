@@ -38,6 +38,38 @@ app.get('/read/:id',(req,res)=>{
     }
 })
 
+//API for create(C)
+app.post('/create',(req,res)=>{
+    const newStudent={
+        id:students.length+1,
+        name:req.body.name
+    }
+    students.push(newStudent);
+    res.status(201).json({message:"student created", student:newStudent});
+})
+//API for update(U)
+app.put('/update/:id',(req,res)=>{
+    const id=parseInt(req.params.id);  
+    const student=students.find(s=>s.id==id);
+    if(student){
+        student.name=req.body.name;
+        res.json({message:"student updated", student});
+    }else{
+        res.status(404).json({message:"student not found"});
+    }
+})
+//API for delete(D)
+app.delete('/delete/:id',(req,res)=>{
+    const id=parseInt(req.params.id);  
+    const index=students.findIndex(s=>s.id==id);
+    if(index!==-1){
+        students.splice(index,1);
+        res.json({message:"student deleted"});
+    }else{
+        res.status(404).json({message:"student not found"});
+    }
+}) 
+
 app.listen(port, () => {  
     console.log(`server is run at:http://localhost:${port}`);
 }) 
