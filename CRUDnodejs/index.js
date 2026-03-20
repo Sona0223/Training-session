@@ -7,11 +7,11 @@ const users = [
 ]
 
 const server = http.createServer((req, res) => {
-    const url = req.url;
+    const url = req.url; 
     const method = req.method;
     if (url == "/users" && method == "GET") {
         res.end(JSON.stringify(users))
-    }
+    } 
     else if (url.startsWith("/users/") && method == "GET") {
         const id = url.split("/")[2];
         const user = users.find(u => u.id == id);
